@@ -14,5 +14,5 @@ module "ec2" {
     monitoring              = true 
     vpc_security_group_ids  = ["sg-0cdkdcldjsnjks"]
     subnet_id               = "subnet-2mdammad"
-    tags                    = var.tags 
+    tags                    = "teste" 
 }
