@@ -30,7 +30,6 @@ jobs:
         uses: asdf-vm/actions/install@v1
       
       - name: Start Localstack
-        uses: localstack/localstack:latest
         run: |
    
           python3 -m pip install localstack
