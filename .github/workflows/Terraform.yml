@@ -30,12 +30,10 @@ jobs:
         uses: asdf-vm/actions/install@v1
       
       - name: Start Localstack
+        uses: localstack/localstack:latest
         run: |
-          apt update && apt upgrade -y 
-          python3 --version
-          pip3 --version 
-          pip3 install localstack
-          localstack --version
+   
+          python3 -m pip install localstack
           docker pull localstack/localstack
           localstack start -d
           echo "Waiting for LocalStack startup..."
