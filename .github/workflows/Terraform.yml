@@ -31,7 +31,10 @@ jobs:
       
       - name: Start Localstack
         run: |
-          pip install localstack
+          python3 --version
+          pip3 --version 
+          pip3 install localstack
+          localstack --version
           docker pull localstack/localstack
           localstack start -d
           echo "Waiting for LocalStack startup..."
