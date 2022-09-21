@@ -33,7 +33,7 @@ jobs:
         run: |
    
           python3 -m pip install localstack awscli-local
-          docker pull localstack/localstack
+          #docker pull localstack/localstack
           localstack start -d
           echo "Waiting for LocalStack startup..."
           localstack wait -t 60
