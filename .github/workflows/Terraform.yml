@@ -33,7 +33,8 @@ jobs:
         run: |
    
           python3 -m pip install localstack awscli-local
-          #docker pull localstack/localstack
+          python3 -m pip install pyOpenSSL cryptography --upgrade
+          docker pull localstack/localstack
           localstack start -d
           echo "Waiting for LocalStack startup..."
           localstack wait -t 60
