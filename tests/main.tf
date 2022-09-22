@@ -13,7 +13,7 @@ module "ec2" {
     ami                     = "ami-12114i34ui3o4"
     monitoring              = true 
     vpc_security_group_ids  = ["sg-0cdkdcldjsnjks"]
-    subnet_id               = "subnet-2mdammad"
+    subnet_id               = "subnet-2eb65362"
     tags                    = {
         name = "teste"
     }
