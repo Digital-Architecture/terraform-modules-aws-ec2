@@ -11,7 +11,7 @@ module "ec2" {
     ec2_name                = "teste"
     iam_instance_profile    = "instance.profile"
     ami                     = "ami-12114i34ui3o4"
-    monitoring              = true 
+    #monitoring              = true 
     #vpc_security_group_ids  = ["sg-0cdkdcldjsnjks"]
     #subnet_id               = "subnet-2eb65362"
     tags                    = {
