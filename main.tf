@@ -82,11 +82,11 @@ resource "aws_instance" "ec2" {
 
 resource "aws_key_pair" "key" {
 
-    key_name    = "${var.ec2_name}${terraform.workspace}"
+    key_name    = "${var.ec2_name}"
     public_key  = tls_private_key.tls.public_key_openssh
 
     tags = {
-        Name    = "${var.ec2_name}${terraform.workspace}"
+        Name    = "${var.ec2_name}"
         Env     = terraform.workspace 
     }
 }
@@ -98,9 +98,9 @@ resource "tls_private_key" "tls" {
 resource "local_file" "key" {
 
     content = tls_private_key.tls.private_key_pem
-    filename = "${var.ec2_name}${terraform.workspace}.pem"
+    filename = "${var.ec2_name}.pem"
 
     provisioner "local-exec" {
-        command = "chmod 400 ${var.ec2_name}${terraform.workspace}.pem"
+        command = "chmod 400 ${var.ec2_name}.pem"
     }
 }
