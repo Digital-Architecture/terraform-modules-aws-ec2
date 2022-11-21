@@ -83,11 +83,11 @@ resource "aws_instance" "ec2" {
 
 resource "aws_key_pair" "key" {
 
-    key_name    = "${var.ec2_name}"
+    key_name    = var.ec2_name
     public_key  = tls_private_key.tls.public_key_openssh
 
     tags = {
-        Name    = "${var.ec2_name}"
+        Name    = var.ec2_name
         Env     = terraform.workspace 
     }
 }
