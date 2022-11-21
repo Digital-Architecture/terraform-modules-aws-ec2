@@ -20,7 +20,7 @@ resource "aws_instance" "ec2" {
 
     availability_zone               = var.availability_zone
     subnet_id                       = var.subnet_id
-    security_groups                 = var.security_groups 
+    security_groups                 = [ var.security_groups ]
     vpc_security_group_ids          = var.vpc_security_group_ids
 
     key_name                        = aws_key_pair.key.key_name
