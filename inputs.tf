@@ -146,3 +146,17 @@ variable "ebs_block_device" {
   type        = list(map(string))
   default     = []
 }
+
+variable "vpc_security_group_ids" {
+
+  description = ""
+  type        = string
+  default     = null    
+}
+
+variable "security_groups" {
+
+  description = ""
+  type        = string
+  default     = null    
+}
