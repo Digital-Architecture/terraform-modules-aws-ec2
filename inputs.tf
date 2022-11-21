@@ -150,6 +150,6 @@ variable "ebs_block_device" {
 variable "security_groups" {
 
   description = ""
-  type        = string
+  type        = list(map(string))
   default     = null    
 }
