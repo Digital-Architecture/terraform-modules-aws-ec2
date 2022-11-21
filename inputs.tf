@@ -147,13 +147,6 @@ variable "ebs_block_device" {
   default     = []
 }
 
-variable "vpc_security_group_ids" {
-
-  description = ""
-  type        = string
-  default     = null    
-}
-
 variable "security_groups" {
 
   description = ""
