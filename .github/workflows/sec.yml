@@ -16,9 +16,12 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v2
 
-        - name: Checkov
+        - name: Checkov Scan
           uses: PISC-CODEIA-7/central-ci-cd/.github/actions/ci/sec/checkov@develop
 
+        - name: TFsec Scan
+          uses: PISC-CODEIA-7/central-ci-cd/.github/actions/ci/sec/tfsec@develop
+    
 
 
 
