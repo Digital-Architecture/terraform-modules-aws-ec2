@@ -1,0 +1,26 @@
+name: PISC Tools IaC
+
+on:
+    push:
+        branches:
+            - "develop"
+
+jobs:
+
+    sec:
+
+        runs-on: ubuntu-latest
+
+        steps:
+        
+        - name: Checkout
+          uses: actions/checkout@v2
+
+        - name: Checkov
+          uses: PISC-CODEIA-7/central-ci-cd/.github/actions/ci/sec/checkov@develop
+
+
+
+
+
+
