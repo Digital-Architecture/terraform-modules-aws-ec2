@@ -1,4 +1,4 @@
-name: TFScan Scan
+name: TFSec Scan
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
     branches: [ develop ]
 
 jobs:
-    sec:
+    TFsec:
         runs-on: ubuntu-latest
         steps:
         
