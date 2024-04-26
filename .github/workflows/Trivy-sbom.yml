@@ -10,7 +10,7 @@ jobs:
     Trivy-sbom:
         runs-on: ubuntu-latest
         permissions:
-            actions: read
+            actions: write
             contents: write
             security-events: write
         steps:
