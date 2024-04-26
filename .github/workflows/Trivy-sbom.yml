@@ -21,4 +21,4 @@ jobs:
         - name: Trivy Sbom
           uses: PISC-CODEIA-7/central-ci-cd/.github/actions/ci/sec/trivy-sbom@develop
           with:
-            TOKEN_SEC: ${{ secrets.TOKEN_SEC }}
+            TOKEN_SEC: ${{ github.token }}
