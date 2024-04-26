@@ -17,5 +17,5 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v3
 
-        - name: TFsec Scan
+        - name: Trivy Sbom
           uses: PISC-CODEIA-7/central-ci-cd/.github/actions/ci/sec/trivy-sbom@develop
