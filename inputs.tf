@@ -1,5 +1,5 @@
 # NTTDATA - DIGITAL ARCHITECTURE
-# Create: Marcos Cianci - mlopesci@emeal.nttdata.com
+# Create: Marcos Cianci 
 # Date: Qua 21 Set 2022
 # Terraform Module - AWS EC2
 
@@ -145,4 +145,11 @@ variable "ebs_block_device" {
   description = "Additional EBS block devices to attach to the instance"
   type        = list(map(string))
   default     = []
+}
+
+variable "security_groups" {
+
+  description = ""
+  type        = list(string)
+  default     = null    
 }

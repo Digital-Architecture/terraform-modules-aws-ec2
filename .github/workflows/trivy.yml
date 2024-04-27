@@ -1,0 +1,24 @@
+name: trivy
+
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
+
+permissions:
+  contents: read
+
+jobs:
+  Trivy-PR-Report:
+    runs-on: ubuntu-latest
+    permissions:
+        contents: read 
+        security-events: write
+        actions: read 
+    steps:    
+
+    - name: Trivy Scan
+      uses: PISC-CODEIA-7/central-ci-cd/.github/actions/ci/sec/trivy-pr-report@develop
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

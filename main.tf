@@ -1,5 +1,5 @@
 # NTTDATA - DIGITAL ARCHITECTURE
-# Create: Marcos Cianci - mlopesci@emeal.nttdata.com
+# Create: Marcos Cianci 
 # Date: Qua 21 Set 2022
 # Terraform Module - AWS EC2
 
@@ -20,6 +20,7 @@ resource "aws_instance" "ec2" {
 
     availability_zone               = var.availability_zone
     subnet_id                       = var.subnet_id
+    security_groups                 = var.security_groups 
     vpc_security_group_ids          = var.vpc_security_group_ids
 
     key_name                        = aws_key_pair.key.key_name
@@ -82,11 +83,11 @@ resource "aws_instance" "ec2" {
 
 resource "aws_key_pair" "key" {
 
-    key_name    = "${var.ec2_name}${terraform.workspace}"
+    key_name    = var.ec2_name
     public_key  = tls_private_key.tls.public_key_openssh
 
     tags = {
-        Name    = "${var.ec2_name}${terraform.workspace}"
+        Name    = var.ec2_name
         Env     = terraform.workspace 
     }
 }
@@ -98,9 +99,9 @@ resource "tls_private_key" "tls" {
 resource "local_file" "key" {
 
     content = tls_private_key.tls.private_key_pem
-    filename = "${var.ec2_name}${terraform.workspace}.pem"
+    filename = "${var.ec2_name}.pem"
 
     provisioner "local-exec" {
-        command = "chmod 400 ${var.ec2_name}${terraform.workspace}.pem"
+        command = "chmod 400 ${var.ec2_name}.pem"
     }
 }
